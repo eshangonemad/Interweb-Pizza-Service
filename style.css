@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+/*  ff551d-ffb930-585123-772f1a-2f1b25  */
 html,body{
     margin: 0;
     padding: 0;
@@ -9,11 +13,74 @@ html,body{
 body{
     background-color: #2f1b25ff;
 }
+.content{
+    padding-inline: 10px;
+    height: 80vh;
+}
 
 nav{
+
     background-color: rgb(255, 255, 255);
     color: #fff;
     padding: 5px;
     text-align: center;
+    margin-bottom: 10px;
     border-radius: 0 0 20px  20px;
+}
+.ttext{
+    font-family: google sans;
+    background: radial-gradient(circle, #ff551d, #ffb930);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+}
+
+.maincon{
+    display: flex;
+    justify-content: center;
+}
+.Order{
+    font-family: tilt neon;
+    font-size: 3vh;
+    background-color: #ff551d;
+    color: white;
+    width: 19vh;
+    height: 4vh;
+    padding: 10px;
+    border-radius: 6px 0 0 6px;
+    cursor: pointer;
+}
+.gifti{
+    font-family: tilt neon;
+    font-size: 3vh;
+    height: 4vh;
+    background-color: #ffb930;
+    color: white;
+    width: 19vh;
+    text-align: right;
+    padding: 10px;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+
+}
+.gifti:hover{
+    background-color: #f7c156;
+}
+.Order:hover{
+    background-color: #f86d3e;
+}
+.ori{
+    
+  position: absolute;
+    font-family: google sans;
+    background-color: white;
+    border-radius: 100%;
+    height: 4vh;
+    width: 4vh;
+    text-align: center;
+    vertical-align: middle;
+    
+line-height: 4vh;
+    margin-top: .8vh;
+    
 }
