@@ -1,0 +1,19 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    height: 100% ;
+    width: 100%;
+}
+body{
+    background-color: #2f1b25ff;
+}
+
+nav{
+    background-color: rgb(255, 255, 255);
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+    border-radius: 0 0 20px  20px;
+}
