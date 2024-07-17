@@ -13,16 +13,17 @@ html,body{
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4;
     height: 100% ;
     width: 100%;
 }
 body{
-    background-color: #2f1b25ff;
+    background-color: #2f1b25;
 }
 .content{
     padding-inline: 10px;
-    height: 80vh;
+    height: 75vh;
+    display: flex;
+    overflow-y: auto;
 }
 .ttext{
     font-family: 'Tilt Neon', sans-serif;
@@ -41,13 +42,71 @@ nav{
     margin-bottom: 10px;
     border-radius: 0 0 20px  20px;
 }
+.order{
+    background-color: #ffffff7e;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    color: #000000;
+    padding-top: 10px;
+    height: 20vh;
+    font-family: 'Righteous', sans-serif;
+    bottom: 0;
+    position: fixed;
+    padding-left: 5px;
+}
+.orderitems{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #02020271;
+    margin-top: 10px;
+    height: 70%;
+    width: 98%;
+
+}
+.item{
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    margin-top: 10px;
+    height: 20vh;
+    width: 21.3vh;
+}
+button{
+    background-color: #ff551d;
+    color: #fff;
+    width: 100%;
+    border: none;
+    padding: 5px;
+    font-family: google sans;
+    font-size: 2vh;
+    border-radius: 10px;
+    margin-top: 2px;
+
+}
+.item img{
+    border-radius: 10px;
+}
     </style>
 </head>
 <body>
      <nav><img src="/resources/LogoTe.png" width="220"></nav>
+     
+     <h1 style="font-size: 4vh;" class="ttext">Order Now</h1>
+        
     <div class="content">
-        <h1 style="font-size: 4vh;" class="ttext">Order Now</h1>
+        <div class="item">
+            <img src="/resources/pepspiz.jpeg" width="200vh" height="150vh">
+            <button>Add to Cart</button>
+        </div>
     </div>
     
+
+    <div class="order">Order Details
+        <div class="orderitems">
+            <img src="">
+        </div>
+    </div>
 </body>
 </html>
