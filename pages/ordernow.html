@@ -5,89 +5,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Now</title>
     <style>
+        /* Importing fonts and resetting margins */
         @import url('https://fonts.googleapis.com/css2?family=Google+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
-/*  ff551d-ffb930-585123-772f1a-2f1b25  */
-html,body{
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-    height: 100% ;
-    width: 100%;
-}
-body{
-    background-color: #2f1b25;
-}
-.content{
-    padding-inline: 10px;
-    height: 75vh;
-    display: flex;
-    overflow-y: auto;
-}
-.ttext{
-    font-family: 'Tilt Neon', sans-serif;
-      background: linear-gradient(0deg, #ff551d, #ffb930);
+        @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            height: 100%;
+            width: 100%;
+        }
+        body {
+            background-color: #2f1b25;
+        }
+        .content {
+            padding-inline: 10px;
+            height: 75vh;
+            display: flex;
+            overflow-y: auto;
+            flex-wrap: wrap;
+        }
+        .ttext {
+            font-family: 'Tilt Neon', sans-serif;
+            background: linear-gradient(0deg, #ff551d, #ffb930);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-
-}
-nav{
-
-    background-color: rgb(255, 255, 255);
-    color: #fff;
-    padding: 5px;
-    text-align: center;
-    margin-bottom: 10px;
-    border-radius: 0 0 20px  20px;
-}
-.order{
-    background-color: #ffffff7e;
-    width: 100%;
-    border-radius: 10px 10px 0 0;
-    color: #000000;
-    padding-top: 10px;
-    height: 20vh;
-    font-family: 'Righteous', sans-serif;
-    bottom: 0;
-    position: fixed;
-    padding-left: 5px;
-}
-.orderitems{
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #02020271;
-    margin-top: 10px;
-    flex-wrap: wrap; /* Add this line */
-}
-.item{
-
-    margin: 5px;
-    padding: 1vh;
-    border-radius: 1vh;
-    background-color: #ffffff;
-    margin-top: 10px;
-    height: 31vh;
-    width: 20vh;
-}
-button{
-    background-color: #ff551d;
-    color: #fff;
-    width: 100%;
-    border: none;
-    padding: 5px;
-    font-family: google sans;
-    font-size: 3vh;
-    border-radius: 10px;
-    margin-top: 1px;
-
-}
-.item img{
-    border-radius: 10px;
-}
+        }
+        nav {
+            background-color: rgb(255, 255, 255);
+            color: #fff;
+            padding: 5px;
+            text-align: center;
+            margin-bottom: 10px;
+            border-radius: 0 0 20px  20px;
+        }
+        .order {
+            background-color: #ffffff7e;
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+            color: #000000;
+            padding-top: 10px;
+            height: 20vh;
+            font-family: 'Righteous', sans-serif;
+            bottom: 0;
+            position: fixed;
+            padding-left: 5px;
+        }
+        .orderitems {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px;
+            background-color: #ffb93080;
+            border-radius: 10px;
+            overflow-x: auto;
+        }
+        .orderitems img {
+            max-height: 60px;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+        .checkout-button {
+            background-color: #ff551d;
+            color: white;
+            font-size: 2vh;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .item {
+            margin: 5px;
+            padding: 1vh;
+            border-radius: 1vh;
+            background-color: #ffffff;
+            margin-top: 10px;
+            height: 31vh;
+            width: 20vh;
+        }
+        button {
+            background-color: #ff551d;
+            color: #fff;
+            width: 100%;
+            border: none;
+            padding: 5px;
+            font-family: 'Google Sans';
+            font-size: 3vh;
+            border-radius: 10px;
+            margin-top: 1px;
+            cursor: pointer;
+        }
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .modal-content input {
+            margin-bottom: 15px;
+            padding: 10px;
+            width: 80%;
+        }
     </style>
 </head>
 <body>
@@ -96,48 +129,86 @@ button{
      <h1 style="font-size: 5vh;line-height: 1;margin-block: 0vh;margin-left: 1.5vh;" class="ttext">Order Now</h1>
         
     <div class="content">
+        <!-- Menu items -->
         <div class="item">
-            <img src="/resources/pepspiz.jpeg" width="100%" height="180vh">
-            <p style="line-height: 0;">Pepperoni Pizza</p>
-            <button value="pepperoni">Add to Cart</button>
+            <img src="/resources/pepspiz.jpeg" width="100%" height="180px">
+            <p>Pepperoni Pizza</p>
+            <button value="pepperoni" data-img="/resources/pepspiz.jpeg">Add to Cart</button>
         </div>
         <div class="item">
-            <img src="/resources/lavacake.jpeg" width="100%" height="180vh">
-            <p style="line-height: 0;">Lava Cake</p>
-            <button value="lava">Add to Cart</button>
+            <img src="/resources/lavacake.jpeg" width="100%" height="180px">
+            <p>Lava Cake</p>
+            <button value="lava" data-img="/resources/lavacake.jpeg">Add to Cart</button>
         </div>
         <div class="item">
-            <img src="/resources/pasta.jpeg" width="100%" height="180vh">
-            <p style="line-height: 0;">Pasta</p>
-            <button value="pasta">Add to Cart</button>
+            <img src="/resources/pasta.jpeg" width="100%" height="180px">
+            <p>Pasta</p>
+            <button value="pasta" data-img="/resources/pasta.jpeg">Add to Cart</button>
         </div>
-        <div class="item">
-            <img src="/resources/MargPizza.jpeg" width="100%" height="180vh">
-            <p style="line-height: 0;">Margerita Pizza</p>
-            <button value="marpizza">Add to Cart</button>
-        </div>
-        <div class="item">
-            <img src="/resources/prawn pizza.jpeg" width="100%" height="180vh">
-            <p style="line-height: 0;">Seafood Pizza</p>
-            <button value="seapizza">Add to Cart</button>
-        </div>
-        <div class="item">
-            <img src="/resources/cheese.jpeg" width="100%" height="180vh">
-            <p style="line-height: 0;">Cheese Pizza</p>
-            <button value="cheese">Add to Cart</button>
-        </div>
-        <div class="item">
-            <img src="/resources/rainbowsubr.jpeg" width="100%" height="180vh">
-            <p style="line-height: 0;">Rainbow Swepreme</p>
-            <button value="rainbow">Add to Cart</button>
-        </div>
+        <!-- Additional items here -->
     </div>
     
-
+    <!-- Order Summary Section -->
     <div class="order">Order Details
         <div class="orderitems">
-            <img src="">
+            <!-- Cart items will appear here -->
+        </div>
+        <button class="checkout-button">Checkout</button>
+    </div>
+
+    <!-- Modal for email input -->
+    <div id="emailModal" class="modal">
+        <div class="modal-content">
+            <h2>Enter your Email</h2>
+            <input type="email" id="emailInput" placeholder="Email">
+            <button onclick="submitOrder()">Submit</button>
         </div>
     </div>
+
+    <script>
+        const cartItems = [];
+        const orderItemsDiv = document.querySelector('.orderitems');
+        const buttons = document.querySelectorAll('.item button');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const imgSrc = button.getAttribute('data-img');
+                const img = document.createElement('img');
+                img.src = imgSrc;
+                orderItemsDiv.appendChild(img);
+                cartItems.push(button.value);
+            });
+        });
+
+        // Checkout button event
+        const checkoutButton = document.querySelector('.checkout-button');
+        const emailModal = document.getElementById('emailModal');
+
+        checkoutButton.addEventListener('click', () => {
+            emailModal.style.display = 'flex';
+        });
+
+        // Submit order function
+        function submitOrder() {
+            const email = document.getElementById('emailInput').value;
+
+            // Simulate API call to send email and cart items
+            console.log('Sending order:', cartItems, 'to', email);
+
+            // Close modal
+            emailModal.style.display = 'none';
+
+            // Reset order
+            cartItems.length = 0;
+            orderItemsDiv.innerHTML = '';
+        }
+
+        // Close modal if clicked outside
+        window.onclick = function(event) {
+            if (event.target == emailModal) {
+                emailModal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
